@@ -71,4 +71,20 @@ public class Main {
         }
     }
 
+    public static void ifft(Complex[] input)
+    {
+        int N = input.length;
+
+        for (int i = 0; i < N; i++)
+            input[i] = input[i].conjugate();
+
+        fft(input);
+
+        for (int i = 0; i < N; i++)
+            input[i] = input[i].conjugate();
+
+        for (int i = 0; i < N; i++)
+            input[i] = input[i].times(1.0 / N);
+    }
+
 }

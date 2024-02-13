@@ -63,6 +63,10 @@ public class Complex {
         return (new Complex(rho * Math.cos(theta), rho * Math.sin(theta)));
     }
 
+    public Complex times(double d) {
+        return new Complex(re * d, im * d);
+    }
+
     public String toString() {
         return "( " + re + " ) + ( " + im + " )i";
     }
